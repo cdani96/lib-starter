@@ -1,0 +1,69 @@
+{
+    "name": "vite-vue-lib-template",
+    "version": "0.0.0-development",
+    "private": false,
+    "description": "Vite Vue lib template.",
+    "author": "Ehsan Shahvirdi",
+    "license": "MIT",
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "vue",
+        "vite",
+        "template"
+    ],
+    "type": "module",
+    "main": "./dist/vite-vue-lib-template.umd.cjs",
+    "module": "./dist/vite-vue-lib-template.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/vite-vue-lib-template.js",
+            "require": "./dist/vite-vue-lib-template.umd.cjs"
+        },
+        "./*": "./dist/vite-vue-lib-template.js"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+        "format": "prettier .  --write --ignore-path .gitignore",
+        "prepare": "husky install",
+        "commit": "git-cz"
+    },
+    "dependencies": {
+        "vue": "^3.4.21"
+    },
+    "devDependencies": {
+        "@rushstack/eslint-patch": "^1.8.0",
+        "@types/node": "^20.11.30",
+        "@vitejs/plugin-vue": "^5.0.4",
+        "@vue/eslint-config-prettier": "^9.0.0",
+        "@vue/eslint-config-typescript": "^13.0.0",
+        "@vue/tsconfig": "^0.5.1",
+        "cz-conventional-changelog": "3.3.0",
+        "eslint": "^8.57.0",
+        "eslint-plugin-vue": "^9.24.0",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.2",
+        "npm-run-all": "^4.1.5",
+        "pathe": "^1.1.2",
+        "prettier": "^3.2.5",
+        "semantic-release": "^23.0.6",
+        "typescript": "~5.4.3",
+        "vite": "^5.2.6",
+        "vite-plugin-dts": "^3.7.3",
+        "vue-tsc": "^2.0.7"
+    },
+    "lint-staged": {
+        "*.{js,ts,vue}": "eslint --fix",
+        "*.{js,ts,vue,css,scss,json,md}": "prettier --write"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
